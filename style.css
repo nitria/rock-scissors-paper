@@ -73,26 +73,57 @@ h1 span {
   height: 200px;
 }
 
-.choice img {
-  border: 1px solid green;
+.choice svg path {
+  stroke: #151515;
+  fill: #151515;
+  transition: all 0.5s ease;
 }
 
-.rocksvg path {
+.rocksvg:hover path {
   stroke: #008ecc;
   fill: #008ecc;
   filter: drop-shadow(0px 0px 5px #008ecc);
 }
 
-.papersvg path {
+.papersvg:hover path {
   stroke: #39ff14;
   fill: #39ff14;
   filter: drop-shadow(0px 0px 5px #39ff14);
 }
 
-.scissorssvg path {
+.scissorssvg:hover path {
   stroke: #bf00ff;
   fill: #bf00ff;
   filter: drop-shadow(0px 0px 5px #bf00ff);
+}
+
+.enterName {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enterName input {
+  padding: 5px 10px;
+  font-size: 1.5em;
+  border-radius: 15px;
+  border: none;
+  margin: 0 30px 0 0;
+}
+
+.enterName button {
+  padding: 5px 10px;
+  font-size: 1.5em;
+  border-radius: 5px;
+  background: #008ecc;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.enterName button:hover {
+  background: #0575a5;
 }
 
 @media (max-width: 992px) {

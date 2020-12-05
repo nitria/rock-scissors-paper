@@ -7,19 +7,19 @@ var aiScore = 0;
 
 $(".rock").on("click", () => {
   $("#player").html("Rock");
-  generateRandomCard();
+  generateRandomChoice();
   game();
 });
 
 $(".scissors").on("click", () => {
   $("#player").html("Scissors");
-  generateRandomCard();
+  generateRandomChoice();
   game();
 });
 
 $(".paper").on("click", () => {
   $("#player").html("Paper");
-  generateRandomCard();
+  generateRandomChoice();
   game();
 });
 
@@ -28,13 +28,13 @@ function game() {
     case "RockScissors":
     case "PaperRock":
     case "ScissorsPaper":
-      $(".showresult").html("player wins");
+      $(".showresult").html("you win");
       win();
       break;
     case "ScissorsRock":
     case "RockPaper":
     case "PaperScissors":
-      $(".showresult").html("ai wins malaka!");
+      $(".showresult").html("you lose malaka!");
       lose();
       break;
     case "RockRock":
@@ -46,7 +46,7 @@ function game() {
 }
 
 //Random choice for AI//
-function generateRandomCard() {
+function generateRandomChoice() {
   $("#ai").html(choices[Math.floor(Math.random() * choices.length)]);
 }
 
@@ -58,3 +58,12 @@ function win() {
 function lose() {
   $(".aiscore").html((aiScore += 1));
 }
+
+$("#btn").on("click", () => {
+  var playerName = $("input").val();
+  $(".playerdiv")
+    .children("h1")
+    .html(playerName)
+    .css("text-transform", "capitalize");
+  $("input").val("");
+});
