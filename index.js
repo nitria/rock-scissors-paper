@@ -100,35 +100,11 @@ function gameOver() {
   var text;
   if (playerScore == 10 || computerScore == 10) {
     overlay = $("<div class='overlay'></div>");
-    overlay.css({
-      width: "100%",
-      height: "100%",
-      position: "absolute",
-      top: "0",
-      left: "0",
-      background: "rgba(0,0,0,0.85)",
-      display: "flex",
-      "align-items": "center",
-      "justify-content": "space-evenly",
-      "flex-direction": "column",
-    });
 
-    text = $("<h1>Game Over</h1>");
-    text.css({
-      "font-size": "5.5em",
-      color: "#fff",
-    });
+    text = $("<h1 class ='gameover'>Game Over</h1>");
 
     restartGame = $("<button id='restartGame'>Restart Game</button>");
-    restartGame.css({
-      background: " #008ecc",
-      color: "#fff",
-      padding: "10px 20px",
-      "font-size": "1.5em",
-      border: "none",
-      "border-radius": "10px",
-      cursor: "pointer",
-    });
+
     $("body").append(overlay);
     $(".overlay").append(text);
     $(".overlay").append(restartGame);
