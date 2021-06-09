@@ -114,6 +114,7 @@ function gameOver() {
   $("#restartGame").on("click", () => {
     playerScore = 0;
     computerScore = 0;
+    $(".enterName").show();
     $("#playername").html("You:");
     $("#playerChoice").html("");
     $("#computerChoice").html("");
@@ -125,11 +126,24 @@ function gameOver() {
 }
 
 //Button to enter your name//
-$("#btn").on("click", () => {
+$(".btn").on("click", () => {
   var playerName = $("input").val();
-  $("h1")
-    .children("#playername")
-    .html(playerName + ":")
-    .css("text-transform", "capitalize");
+  if (playerName.length <= 0) {
+    $("input").css({ border: "1px solid red" });
+    $("input[placeholder='Enter your name']")
+      .attr("placeholder", "Must write a name")
+      .css({ color: "red" });
+  } else {
+    $(".enterName").hide();
+    $("h1")
+      .children("#playername")
+      .html(playerName + ":")
+      .css("text-transform", "capitalize");
+  }
+  $("input").val("");
+});
+
+$(".anonymous").on("click", () => {
+  $(".enterName").hide();
   $("input").val("");
 });
