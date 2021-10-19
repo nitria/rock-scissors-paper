@@ -143,6 +143,7 @@ $(".btn").on("click", () => {
   $("input").val("");
 });
 
+//Button to play as a guest
 $(".anonymous").on("click", () => {
   $(".enterName").hide();
   $("input").val("");

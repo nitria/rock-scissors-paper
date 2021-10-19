@@ -110,18 +110,21 @@ body {
 .rocksvg:hover path {
   stroke: #008ecc;
   fill: #008ecc;
+  -webkit-filter: drop-shadow(0px 0px 5px #008ecc);
   filter: drop-shadow(0px 0px 5px #008ecc);
 }
 
 .papersvg:hover path {
   stroke: #39ff14;
   fill: #39ff14;
+  -webkit-filter: drop-shadow(0px 0px 5px #39ff14);
   filter: drop-shadow(0px 0px 5px #39ff14);
 }
 
 .scissorssvg:hover path {
   stroke: #bf00ff;
   fill: #bf00ff;
+  -webkit-filter: drop-shadow(0px 0px 5px #bf00ff);
   filter: drop-shadow(0px 0px 5px #bf00ff);
 }
 
@@ -139,14 +142,17 @@ body {
 }
 
 .enterName input {
-  padding: 5px 0;
-  font-size: 1.5em;
+  padding: 0.6rem 0.3rem;
+  font-size: 1.2em;
   border: none;
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .enterName button {
-  width: 300px;
+  margin: 0 auto;
+  width: calc(300px + 0.6rem);
   padding: 5px 10px;
   font-size: 1.5em;
   background: #008ecc;
@@ -207,5 +213,15 @@ body {
   .choice svg {
     width: 100px;
     height: 151px;
+  }
+}
+
+@media screen and (max-width: 319px) {
+  .enterName input {
+    max-width: 300;
+  }
+
+  .enterName p {
+    font-size: 1.1rem;
   }
 }
